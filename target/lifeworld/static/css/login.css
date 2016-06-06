@@ -1,0 +1,103 @@
+@charset "UTF-8";
+.introdule-module{
+	height:350px;
+	margin-top:90px;
+	/*  padding: 20px 40px 0 60px;
+  float: right; */
+}
+.swiper-container {
+  width: 100%;
+  height: 365px;
+  /* width:450px; */
+}
+.content-module {
+ /*  padding-top: 70px; */
+  min-height:490px;
+}
+.login-module{
+	 margin-top:90px;
+	 width:100%;
+}
+.form-group{
+	margin-top:20px;
+}
+.form-show{
+  border: solid 1px #e7e7e7;
+  position: relative;
+  padding: 10px 20px;
+}
+.login-title{
+  font-size: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-family: 'Microsoft Yahei';
+  color: #4d4d4d;
+  filter:alpha(opacity=90); 
+	-moz-opacity:0.9; 
+	opacity:0.9;
+	margin-top: 20px;
+}
+.form-col{
+	font-size: 12px;
+	font-weight:800;
+  font-family: 'Microsoft Yahei';
+  color: #4d4d4d;
+  margin-left: 2px;
+  padding-bottom: 3px;
+}
+.info-a{
+	font-size: 12px;
+	margin-right:4px;
+	color: #00a2ca;
+	float:right;
+	text-decoration: none;
+	cursor:pointer;
+}
+.info-a:link,.info-a:hover,.info-a:visited{
+	color:#00a2ca;
+	text-decoration: none;
+}
+.submit{
+	  color: #fff;
+  background-color: #00a2ca;
+  border-color: #00a2ca;
+  margin-top:20px;
+}
+.submit:hover{
+	background-color:#33b5d4;
+	border-color:#33b5d4;
+}
+.agreement{
+	display:inline-block;
+	  /* line-height: 20px;
+  	margin-top: 10px; */
+  	font-size:12px;
+}
+.register>a{
+	float:left;
+}
+.agreement input[type=checkbox]{
+	height: 13px;
+  vertical-align: middle;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.agreement label{
+	border:0;
+}
+.login-other{
+	display: block;
+  margin-top: 10px;
+  height:20px;
+}
+
+
+@media screen and (max-width: 768px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+  .introdule-module{
+    display:none;
+  }
+  .login-module{
+  	margin-top:40px;
+  }
+}

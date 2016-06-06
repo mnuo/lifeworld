@@ -1,0 +1,430 @@
+<div class="main-body" ng-controller="InfoblogController">
+<link href="css/usercommon.css" rel="stylesheet"/>
+<style type="text/css">
+	.state-selector-item{
+		width:115px;
+		text-align:center;
+	}
+	li.state-selector-item>a{
+		padding: 6px 12px;
+	    border-radius: 0px;
+		border: 1px solid #D9DEE4;
+	    background-color: #D9DEE4;
+	    color: #666;
+	    line-height: 20px;
+	    height: 32px;
+	    margin-left: 2px;
+	}
+	li.state-selector-item>a:hover,li.state-selector-item>a:focus{
+	    border: 1px solid #D9DEE4;
+	    background-color: #DCE2E7;
+	    color: #444;
+	
+	}
+	li.state-selector-item.active>a,li.state-selector-item.active>a:hover,li.state-selector-item.active>a:focus{
+		border: 1px solid #546478;
+	    background-color: #546478;
+	    color: #FFFFFF;
+	}
+	div.padding-left-0{
+		padding-left:0;
+		padding-right:0;
+		margin-top:15px;
+	}
+	div.padding-top-5{
+		padding-left:0px;
+		margin-top:8px;
+	}
+	.table{
+		background: #FFF;
+	  font-size: 12px;
+	  border-top: 1px solid #e1e6eb;
+	  margin-top: 8px;
+	  border: 1px solid #e1e6eb;
+	}
+	.table thead tr th {
+		  padding: 8px 8px;
+		  font-weight: normal;
+		  color: #999;
+		  border-bottom: 1px solid #e1e6eb;
+		  background-color: #F5F6FA;
+  }
+  .table tbody tr td {
+		  padding: 12px 8px;
+		  border-top: 0px;
+		  border-bottom: 1px solid #e1e6eb;
+		  vertical-align: middle;
+		}
+		.state-unread{ 
+			font-size: 16px;
+  		color: #428bca;
+		}
+		.table tbody tr td>.column-text{
+				color: #999;
+		}
+		.table tbody tr td.title-column{
+				width:50%;
+		}
+		.table tbody tr td.title-column>a{
+				width:80%;
+			  color: #000;
+		}
+		.table tbody tr td.title-column>a>span{
+			width:100%;
+			
+		}
+		.pagination-info{
+			display: inline-block;
+		  vertical-align: middle;
+		  zoom: 1;
+		  padding: 0px 16px;
+		  color: #888;
+		}
+		.pagination{
+				margin:0;
+			  vertical-align: middle;
+			  border-radius: 0px;
+		}
+</style>
+    <div class="" ng-animate="{enter:'fade-enter'}">
+    	<div class="main-body-section" bindonce="">
+    		<div class="main-body-title console-title-border clearfix">
+    			<h5 class="main-body-title-text">消息中心</h5>
+    		</div>
+    		<div class="main-body-content clearfix secure">
+    			<div class="col-sm-12 padding-left-0">
+    				<div class="">
+    					<ul class="nav nav-pills">
+    						<li  class="state-selector-item ng-scope active">
+    							<a href="javascript:;">全部消息</a>
+							</li>
+							<li  class="state-selector-item ng-scope" >
+								<a href="javascript:;">消息类型(5)</a>
+							</li>
+							<li  class="state-selector-item ng-scope" >
+								<a href="javascript:;">消息类型(5)</a>
+							</li>
+							<li  class="state-selector-item ng-scope" >
+								<a href="javascript:;">消息类型(5)</a>
+							</li>
+							<li  class="state-selector-item ng-scope" >
+								<a href="javascript:;">消息类型(5)</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12 padding-left-0 padding-top-5">
+					<div class="gridSection">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									
+									<th class="state-column">
+									</th>
+									<th class="title-column">
+										标题内容
+									</th>
+									<th>
+										提交时间
+									</th>
+									<th>
+										<span>提交时间</span>
+									</th>
+									<th>
+										<span>最后修改时间</span>
+									</th>
+									<th>
+										<span></span>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="state-column">
+										<span class="state-unread">●</span>
+									</td>
+									<td class="title-column">
+										<a href="javascript:;" class="title-unread">
+											<span text-length="50" source-text="云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容">云周刊76期：微博春节日活用户超1亿，分分钟搞定服务器成倍扩容</span>
+										</a>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.GmtCreated|date:'yyyy-MM-dd HH:mm:ss'">
+											2016-04-07 16:54:48
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+											产品消息-域名和网站
+										</span>
+									</td>
+									<td>
+										<span class="column-text" bo-text="item.CategoryName">
+										</span>
+									</td>
+								</tr>
+						</tbody>
+				</table>
+				
+				<table class="table table-fixed" style="margin: 0px; z-index: 99;  position: relative; bottom: 0px;">
+					<tfoot>
+						<tr>
+							<td width="10" style="width: 30px;">
+								
+							</td>
+							<td colspan=" 4">
+								<div class="pull-left">
+									<div>
+									<!-- <a href="javascript:;" class="btn btn-default" >
+										<span class=""> 删除 </span>
+									</a>
+									<span class="margin-right"></span>
+									<a href="javascript:;" class="btn btn-default">
+										<span class=""> 标记已读 </span>
+									</a> -->
+									</div>
+								</div>
+								<div>
+									<div class="pull-right" >
+										<div class="pagination-info">
+											<span class="ng-binding">共有10条</span>
+												， 
+											<span class="ng-binding">每页显示：20条</span>
+										</div>
+										<ul class="pagination">
+										<li>
+											<a class="">«</a>
+										</li>
+										<li>
+											<a ng-click="selectPage(page.number)">‹</a>
+										</li>
+										<li class="active">
+											<a ng-click="selectPage(page.number)" class="ng-binding">1</a>
+										</li>
+										<li class="disabled">
+											<a ng-click="selectPage(page.number)" class="">›</a>
+										</li>
+										<li class="disabled">
+											<a class="">»</a>
+										</li>
+									</ul>																			
+									</div>
+								</div>
+							</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

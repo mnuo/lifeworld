@@ -1,0 +1,170 @@
+@charset "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+	 font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+	 font-size:12px;
+	 color:#333;
+	 height:100%;
+	 overflow:hidden;
+}
+.wrap{
+	position:relative;
+	height:100%;
+}
+.per-header{
+	position: fixed;
+  z-index: 100;
+  clear: both;
+  height: 50px;
+  background: #09C;
+  font-size: 12px;
+  width: 100%;
+  color:#fff;
+  font-size:14px;
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+  
+}
+.content-font{
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+	font-size:12px;
+	color:#fff;
+}
+.opacity9{
+	filter:alpha(opacity=98); 
+	-moz-opacity:0.98; 
+	opacity:0.98;
+}
+.main-title{
+	  /* width: 100px; */
+  float: left;
+  padding-left: 21px;
+  padding-right: 21px;
+  border-right: solid 1px #0087b4;
+}
+.main-title:hover,.main-title-right:hover{
+	color:#fff;
+	cursor:pointer;
+	background: #008fbf;
+}
+.main-title-right{
+	float: right;
+  padding-left: 21px;
+  padding-right: 21px;
+  border-left: solid 1px #0087b4;
+}
+.per-title{
+	height:50px;
+	line-height:50px;
+}
+.icon-title{
+	width: 50px;
+  background: #0087b4;
+  display: block;
+  height: 50px;
+  position: relative;
+  padding: 9px 9px 9px 9px;
+}
+.icon-logo{
+	background:url('../../../images/favicon.ico') no-repeat;
+	width:32px;
+	height:32px;
+	display:block;
+}
+.left-title{
+	color:#fff;
+	float:left;
+}
+.per-left-title{
+	width: 180px;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  background-color: #293038;
+  overflow: hidden;
+}
+.left-li{
+	color:#fff;
+}
+.left-li ul li{
+	list-style-type:none;
+}
+.left-li ul{
+	padding:0;
+	margin-bottom:0;
+	/* background: #37424f; */
+}
+#container{
+	height: 100%;
+  padding-top: 50px;
+  margin-left: 180px;
+  overflow: hidden;
+  position:relative;
+}
+.content-right{
+	width:100%;
+	min-height:200px;
+}
+.contant-left-title{
+	height: 30px;
+  width: 180px;
+  background: #394555;
+  color: #aeb9c2;
+  text-align: center;
+  line-height: 30px !important;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.contant-left-title-tail,.contant-left-li{
+	height: 40px;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.contant-left-title-tail{
+	background: #22282e;
+}
+i.icon-caidanmian{
+	font-size:20px;
+}
+i.icon-control-arr,i.icon-icon{
+	font-size:14px;
+}
+.contant-left-title-tail .iconfont{
+	margin-left:16px;
+}
+.contant-left-li>span,.contant-left-title-tail>span{
+	margin-left:10px;
+}
+.contant-left-li .iconfont{
+	margin-left:16px;
+	font-size:18px;
+}
+.per-left-title-displaytext{
+	width:50px;
+}
+.hidden-lis{
+	  background: #37424f;
+	  border-bottom: 1px solid #414d5c;
+}
+.contant-left-title-tail:hover,.hidden-lis:hover,.contant-left-li:hover{
+	background:#414d5c;
+}
+#container.container-toggle{
+	margin-left:50px;
+}
+.wrap-container{
+	height:100%;
+	overflow:auto;
+}
+.contant-left-li>a,.contant-left-li>a:hover,.contant-left-li>a:focus,.contant-left-li.active{
+	color:#fff;
+}

@@ -1,0 +1,145 @@
+@charset "UTF-8";
+html, body {
+		min-height:300px;
+}
+.swiper-container {
+    min-width: 100%;
+    min-height: 100%;
+}
+.swiper-slide-about img{
+	min-width: 100%;
+    height: 100%;
+}
+
+.swiper-container-h {
+	height:100%;
+}
+.content-module{
+	padding-top:0px;
+}
+.worktype {
+  height: 200px;
+  width: 200px;
+  border: solid 2px #f90;
+  margin: auto;
+  border-radius: 50%;
+}
+.works-module{
+	margin:auto;
+	padding-top:20px;
+	margin-top:40px;
+}
+.worktype-tool{
+	background:url('../images/tool.png') no-repeat;
+	background-size:cover;
+	width:100px;
+	height:100px;
+	position:absolute;
+	margin:auto;
+	top:50px;
+	right:0;
+	left:0;
+}
+.worktype-rocket{
+	background:url('../images/rocket.png')  no-repeat;
+	width:77px;
+	height:100px;
+	position:absolute;
+	margin:auto;
+	top:50px;
+	right:0;
+	left:0;
+}
+.worktype-geer{
+	background:url('../images/geer.png')  no-repeat;
+	background-size:cover;
+	width:100px;
+	height:100px;
+	position:absolute;
+	margin:auto;
+	top:50px;
+	right:0;
+	left:0;
+}
+.work-title{
+	margin-top:30px;
+}
+.work-content{
+	margin-top:30px;
+}
+.school-content{
+	margin-top:30px;
+	min-height:200px;
+}
+.clients-container{
+	max-width:600px;
+	margin-top:40px;
+}
+.contant-text{
+	font-size: 12px;
+  line-height: 28px;
+  color: #808080;
+  font-weight: 300;
+  margin-top:25px;
+  text-align:left;
+}
+.form-horizontal legend{
+	font-size:14px;
+	text-align:left;
+}
+.contantme{
+	margin-top:0px;
+	max-width:800px;
+}
+.form-group {
+	margin-bottom:20px;
+}
+.form-group label{
+	color:#555;
+	font-size:15px;
+}
+.form-group input{
+	height:40px;
+}
+.contantme-submit{
+	color:#fff;
+	background:#00a2ca;
+	border-color: #00a2ca;
+}
+label.contant-email{
+	color:#00a2ca;
+	cursor:pointer;
+}
+.contantme-submit:hover{
+	color:#fff;
+	background-color:#33b5d4;
+	border-color: #00a2ca;
+}
+.contantme-footer{
+	margin-top:0;
+}
+div.swiper-button-next{
+	right:60px;
+	color:#fff;
+}
+div.swiper-button-prev{
+	left:60px;
+	color:#fff;
+}
+.ie-swiper-slide {
+	position:relative;
+}
+.ie-swiper-slide>div.container{
+	position:absolute;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	padding-top:60px;
+	height:100%;
+	overflow:auto;
+}
+.ie-swiper-slide>div.container.contantme-footer{
+	overflow:hidden;
+}

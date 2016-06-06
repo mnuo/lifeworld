@@ -1,0 +1,152 @@
+@charset "UTF-8";
+.main-body{
+	padding-left:20px;
+	padding-right:14px;
+	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+	font-size:12px;
+  color: #333333;
+}
+.main-body-title,.main-body-form-title-text{
+	border-bottom: 1px solid #DDD;
+  padding: 15px 0px;
+  min-height: 50px;
+  opacity: 0.9999999;
+  font-size:14px;
+}
+
+.main-body-title h5,.main-body-form-title-text h5{
+	border-left: 2px solid #88B7E0;
+	text-indent: 8px;
+}
+.main-body-form-title-text{
+	border-bottom: 0px;
+	min-height: 30px;
+}
+.main-body-content{
+  margin-top: 8px !important;
+  border-bottom: 1px solid #DDD;
+}
+.summary{
+	padding-top: 23px;
+}
+.avatar p{
+	padding-right:30px;
+}
+p.avatar-txt{
+	margin-left: 34px;
+}
+.alert{
+	  padding: 6px 12px;
+  line-height: 18px;
+  margin-bottom: 6px;
+  border-radius: 0px;
+}
+.alert-info{
+	  color: #555;
+  	background-color: #F9F9F9;
+  	border-color: #DDD;
+}
+.form-group{
+	  margin-top: 8px;
+  	margin-bottom: 19px;
+ 		height:32px;
+}
+.label-title{
+	line-height:32px;
+	font-weight:100;
+	width:150px;
+	text-align: right;
+}
+.form-control{
+  padding: 6px;
+  height:32px;
+  border-radius:0px;
+  -webkit-transition: none;
+  transition: none;
+  font-size: 12px;
+ /*  //width: 32.333333333%; */
+	width:326px;
+	margin-bottom: 19px;
+}
+button.form-control{
+	max-width:60px;
+	min-width:50px;
+}
+select.select-control{
+	width:200px;
+	margin-right:20px;
+}
+a:hover,a:focus{
+	text-decoration: none;
+	cursor:pointer;
+}
+.edit-email{
+  margin: 0 15px 0 5px;
+}
+.email-valid{
+	color:#f90 !important;
+}
+.secure-level{
+	padding: 40px 0;
+}
+.progress{
+	width: 200px;
+  margin-left: 32px !important;
+}
+.progress-bar{
+	width:33%;
+	background-color: #d9534f;
+}
+.margin-left-4{
+	margin-left:32px !important;
+}
+.text-warning{
+	color: #F90 !important;
+}
+.secure-set-list{
+	  padding-left: 0;
+}
+.secure-set-list>li{
+	padding: 33px;
+  border-top: 1px dashed #e1e6eb
+}
+.main-body-content.secure{
+	border-bottom:0px;
+	
+}
+ul,li{
+	list-style: none;
+}
+.set-list-left{
+	width:66px;
+}
+.set-list-mid{
+	display:inline-block;
+}
+.inner{
+	width: 75%;
+  overflow: hidden;
+}
+.set-list-right{
+	  width: 190px;
+  padding-left: 30px;
+}
+.text-success {
+  color: #3c763d;
+}
+.text-explode {
+  color: #CCC !important;
+  font-weight: normal !important;
+  margin: 0px 4px !important;
+}
+.text-warning{
+	  color: #F90 !important;
+}
+.secure-title{
+	padding-top:8px;
+	margin-bottom:0px;
+	padding-bottom:10px;
+}
+.password-form{
+  border-top: solid 1px #ddd;
+}

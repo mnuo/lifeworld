@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mnuocom.lifeworld.dao.IpsDao" >
+  <resultMap id="BaseResultMap" type="com.mnuocom.lifeworld.entity.Ips" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="ip_type" property="ipType" jdbcType="VARCHAR" />
+    <result column="ip_address" property="ipAddress" jdbcType="VARCHAR" />
+    <result column="ip_type1" property="ipType1" jdbcType="VARCHAR" />
+    <result column="ip_business" property="ipBusiness" jdbcType="VARCHAR" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ip, ip_type, ip_address, ip_type1, ip_business, created_at
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lw_ips
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lw_ips
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mnuocom.lifeworld.entity.Ips" >
+    insert into lw_ips (id, ip, ip_type, 
+      ip_address, ip_type1, ip_business, 
+      created_at)
+    values (#{id,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{ipType,jdbcType=VARCHAR}, 
+      #{ipAddress,jdbcType=VARCHAR}, #{ipType1,jdbcType=VARCHAR}, #{ipBusiness,jdbcType=VARCHAR}, 
+      #{createdAt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mnuocom.lifeworld.entity.Ips" >
+    insert into lw_ips
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="ipType != null" >
+        ip_type,
+      </if>
+      <if test="ipAddress != null" >
+        ip_address,
+      </if>
+      <if test="ipType1 != null" >
+        ip_type1,
+      </if>
+      <if test="ipBusiness != null" >
+        ip_business,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ipType != null" >
+        #{ipType,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddress != null" >
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ipType1 != null" >
+        #{ipType1,jdbcType=VARCHAR},
+      </if>
+      <if test="ipBusiness != null" >
+        #{ipBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mnuocom.lifeworld.entity.Ips" >
+    update lw_ips
+    <set >
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ipType != null" >
+        ip_type = #{ipType,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddress != null" >
+        ip_address = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ipType1 != null" >
+        ip_type1 = #{ipType1,jdbcType=VARCHAR},
+      </if>
+      <if test="ipBusiness != null" >
+        ip_business = #{ipBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mnuocom.lifeworld.entity.Ips" >
+    update lw_ips
+    set ip = #{ip,jdbcType=VARCHAR},
+      ip_type = #{ipType,jdbcType=VARCHAR},
+      ip_address = #{ipAddress,jdbcType=VARCHAR},
+      ip_type1 = #{ipType1,jdbcType=VARCHAR},
+      ip_business = #{ipBusiness,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

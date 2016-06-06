@@ -1,0 +1,161 @@
+@charset "UTF-8";
+html,body,.wrap{
+	margin:0;
+	padding:0;
+	font-family: '微软雅黑',Helvetica, Arial, Sans-Serif;
+	background:#f6f6f6;
+}
+a{
+	text-decoration:none;
+}
+a:link,a:visited{
+	text-decoration:none;
+	color:#fff;
+}
+ul li{
+	list-style-type:none;
+}
+ul{
+	padding:0;
+	margin:0;
+}
+.header,.left-wrap,.article{
+	background:#fff;
+	display:block;
+}
+.head-main {
+	/* padding:0 30px; */
+	height:75px;
+	max-width:1140px;
+	min-width:960px;
+	margin:0 auto;
+}
+.logo{
+	width:260px;
+	float:left;
+	padding-top:10px;
+}
+.logo img{
+	width:100%;
+}
+.search{
+	float:right;
+	line-height:72px;
+}
+
+.search input{
+	width:240px;
+	padding:5px 10px;
+}
+.head-nav{
+	background:rgb(185,146,12);;
+	height:34px;
+	margin-bottom:20px;
+}
+.head-nav-ul{
+	/* padding:0 40px; */
+	max-width:1140px;
+	min-width:960px;
+	margin:0 auto;
+}
+.head-nav-ul a:hover{
+	color:#e3efd9;
+}
+.head-nav-ul>li{
+	display: inline-block;
+    margin-right: 20px;
+    line-height:34px;
+	font-size:13px;
+	font-weight:600;
+	position:relative;
+}
+.wrap{
+	max-width:1140px;
+	min-width:960px;
+	margin:0 auto;
+}
+.left-wrap{
+	width: 180px;
+    border: solid 1px #e6e6e6;
+    float:left;
+    font-size:14px;
+    padding-bottom:20px;
+}
+.left-wrap a{
+	color:#333;
+}
+.left-wrap a:hover{
+	color:rgb(185,146,12);
+}
+.left-wrap a.active{
+	color:rgb(185,146,12);
+	font-weight:700;
+}
+.left-title{
+	line-height: 40px;
+    border-bottom: solid 1px #e6e6e6;
+    display: block;
+    margin: 10px 20px;
+    font-size:15px;
+}
+.left-item li{
+	padding: 0 40px;
+    line-height: 30px;
+    font-size: 13px;
+}
+.main{
+	display:block;
+	margin-left: 182px;
+	padding-left:20px;
+	margin-bottom:20px;
+}
+.article{
+	border:solid 1px #e6e6e6;
+	padding: 20px;
+}
+.article-title{
+	font: 26px/180% "Microsoft YaHei";
+    font-size: 22px;
+    margin:0;
+}
+.article-header .time{
+	font-size:12px;
+	color:#666;
+	padding:10px 0;
+	display:block;
+}
+.content-img img{
+	width:100%;
+	opacity:0.8;
+}
+.content-wrap{
+	font-size: 14px;
+    line-height: 1.5;
+    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.page-footer{
+	clear: both;
+	padding: 15px;
+	margin-top: 10px;
+	border-top:solid 1px #e6e6e6;
+	color: #aaa;
+	text-align: center;
+	font-size: 90%;
+}
+.active-tips:before{
+	content: ' ';
+    position: absolute;
+    right: 0px;
+    left: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 6px solid #f6f6f6;
+    bottom: 0px;
+}
+.left-wrap.fix-scroll{
+	position:fixed;
+	top:0px;
+}

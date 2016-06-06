@@ -1,0 +1,47 @@
+<div class="main-body" ng-controller="InfopressController">
+<link href="css/usercommon.css" rel="stylesheet"/>
+<style type="text/css">
+	.form-col{
+		max-width: 80px;
+		float: left;
+		display: inline-block;
+		width: 80px;
+		text-align: right;
+		line-height: 32px;
+	} 
+	.form-control{
+		width:400px;
+	}
+	.right-input{
+		margin-left: 100px;
+	}
+	button.right-input.submit-btn{
+		margin:10px 0 30px 100px;
+		width:100px;
+		max-width: 100px;
+	}
+	
+</style>
+    <div class="" ng-animate="{enter:'fade-enter'}">
+    	<div class="main-body-section" bindonce="">
+    		<div class="main-body-title console-title-border clearfix">
+    			<h5 class="main-body-title-text">消息中心</h5>
+    		</div>
+    		<div class="col-sm-12 padding-left-0">
+    			<div>
+					  <div class="form-group">
+					    <label for="title" class="form-col">标题</label>
+					    <input type="text" class="form-control right-input" id="title" ng-model="title" placeholder="邮箱/手机号/会员账号">
+					  </div>
+				</div>
+    			<div>
+    				<label for="title" class="form-col">内容</label>
+    				<div class="right-input">
+	    				<script type="text/plain" id="editor" style="width:100%;height:400px;"></script>
+    				</div>
+    			</div>
+				<button id="submit" type="button" class="submit-btn form-control right-input btn btn-primary submit btn-block" ng-click="submit()">保存</button>
+    		</div>
+		</div>
+	</div>
+</div>
