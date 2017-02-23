@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>完整demo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="../../libs/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../libs/ueditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="../../libs/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="baby/js/jquery-1.11.0.min.js"></script>
+
+<style type="text/css">
+    .mainupload{
+     	width:80%; 
+		margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+<div class="mainupload">
+    <h1>上传图片页面</h1>
+    
+    <div style="line-height:42px;font-size:13px;"><span>时间: </span><input type="text" id="time"/>
+    <span style="margin-left:30px;">说明: </span><input type="text" id="descript" style="width:300px;"/></div>
+    <script id="editor" type="text/plain" style="width:1024px;height:300px;"></script>
+    <div style="margin-top:20px;margin:0 auto;"><input onclick="save()" type="button" value="保存"/></div>
+</div>
+   
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor', {
+        toolbars: [
+            ['insertimage', 'attachment']
+        ]
+    });
+
+function save(){
+	var time = $('#time').val();
+	var descript = $('#descript').val();
+	var imageurl = ue.getContent();
+	var images = $(imageurl).find('img');
+	var imageurls = '';
+	if(images.length > 0){
+		$.each(images,function(index,value){
+			imageurls += $(this).attr('src') + ',';
+		});
+	}
+	$.ajax({
+		type:'post',
+		dataType:'json',
+		data:{time: time, descript: descript, imageUrl:imageurls},
+		url:'../../../babytimeline/create',
+		success: function(){
+			alert("hello");
+		}
+	});
+}
+</script>
+</body>
+</html>

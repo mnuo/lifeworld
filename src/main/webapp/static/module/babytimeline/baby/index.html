@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BODY成长记</title>
+
+<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/demo.css"/> -->
+<link rel="stylesheet" href="css/animate.css"/>
+<link rel="stylesheet" href="css/simple.slide.css"/>
+<style>
+p{
+color:#fff;
+font-size:15px;
+text-shadow: 0 0 10px #529DFF;
+}
+
+.tri-up{width: 0;height:0;border-left:20px solid transparent;border-right: 20px solid transparent;border-bottom: 20px solid red;  }
+.tri-left{width: 0;height:0;border-top:20px solid transparent;border-bottom: 20px solid transparent;border-left: 20px solid red;}
+.tri-right{width: 0;height:0;border-top:20px solid transparent;border-bottom: 20px solid transparent;border-right: 20px solid red;}
+.tri-down{width: 0;height:0;border-left:20px solid transparent;border-right: 20px solid transparent;border-top: 20px solid red; }
+
+.right_li .line-time{
+	border-left: 1px solid #dff;
+	display: block;
+	padding-top: 20px;
+	position: relative;
+	margin-left: -1px;
+	top: 20px;
+	min-height: 180px;
+}
+.right_li .line-time:before{
+	content: "";
+	border: 8px solid transparent;
+	border-left: 8px solid #dff;
+	display: block;
+	position: absolute;
+	top: -23px;
+	left: -2px;
+	box-shadow: 0 0 8px #1890ff;
+}
+.left_li .line-time{
+	border-right: 1px solid #dff;
+	display: block;
+	padding-top: 20px;
+	position: relative;
+	top: 20px;
+	min-height: 180px;
+}
+.left_li .line-time:before{
+	content: "";
+	border: 8px solid transparent;
+	border-right: 8px solid #dff;
+	display: block;
+	position: absolute;
+	top: -23px;
+	right: -2px;
+	box-shadow: 0 0 8px #1890ff;
+}
+.img_show{
+	white-space: normal;
+}
+.img_show img{
+	height:160px;
+	margin: 2px;
+}
+.line-top {
+	height: 60px;
+    display: block;
+    margin-left: 50%;
+    border-left: 1px solid #dff;
+    margin-top: -2px;
+}
+.txt_events p{
+	font-size: 12px;
+	word-break: break-word;
+	white-space: normal;
+	text-indent: 2em;
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrap about_page" id="wrap">
+  <div class="wrapper">
+    <div class="header">
+      <div class="head">
+	  
+          <div class="nav_box">
+            <ul class="nav_list" id="nav_list">
+							 <li><a href="javascript:void(0);" onclick="play()" id="playbtn" class="btn_sound"></a></li>
+							 <li><a href="#">主页</a></li>
+							 <li><a href="">官网</a></li>
+            </ul>
+            <span class="ic_line" id="h_line"></span>
+          </div>
+      </div>
+    </div>
+    <div class="events_sec" id="events_sec">
+      <div class="content">
+        <h3 class="hide_txt png">sc.chinaz.com</h3>
+        <div class="events_list">
+          <span class="ic_time png"></span>
+          <!--<span class="line-top line_events"></span>-->
+          <ul id="items">
+           <!--
+           	作者：3010382419@qq.com
+           	时间：2017-02-19
+           	描述：
+           	<li class="right_li">
+           	  <div class="line_events png line-time png">
+              </div>
+            </li>
+            <li class="left_li">
+              <div class="line_events png line-time png">
+              	<div class="txt_events">
+	              	<strong>2017 年 12 月 12 日</strong>
+	              	<p>一周时候,一起去什么地方拍的照片.....</p>
+	              	<div class="img_show">
+	              			<img src="1.jpg" />
+	              			<img src="1.jpg" />
+              				<img src="1.jpg" />
+              				<img src="1.jpg" />
+              				<img src="1.jpg" />
+	              	</div>
+	              </div>
+              </div>
+            </li>
+            <li class="right_li">
+              <div class="line_events png line-time png">
+              	<div class="txt_events">
+	              	<strong>2017 年 12 月 12 日</strong>
+	              	<p>一周时候,一起去什么地方拍的照片.....</p>
+	              	<div class="img_show">
+	              			<img src="1.jpg" />
+	              			<img src="1.jpg" />
+              				<img src="1.jpg" />
+              				<img src="1.jpg" />
+              				<img src="1.jpg" />
+	              	</div>
+	              </div>
+              </div>
+            </li>
+            -->
+              
+          </ul>
+          <div style="clear:both"></div>
+          <span id="next" class="ic_arr png"></span>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <audio id="audio" src="let-it-go.mp3" style="opacity:0" preload="auto" controls loop hidden="true">  
+  </audio>
+  <div class="lk content" style="display: none;">
+    <div id="main1" style="display: none;">
+        <!--<a href="javascript:;" i="img/1.jpg" class="Slide One"><img src="img/1.jpg" alt=""></a>
+        <a href="javascript:;" i="img/2.jpg" class="Slide One"><img src="img/2.jpg" alt=""></a>
+        <a href="javascript:;" i="img/3.jpg" class="Slide One"><img src="img/3.jpg" alt=""></a>
+        <a href="javascript:;" i="img/4.jpg" class="Slide One"><img src="img/4.jpg" alt=""></a>
+        <a href="javascript:;" i="img/5.jpg" class="Slide One"><img src="img/5.jpg" alt=""></a>-->
+    </div>
+  </div>
+
+<script>
+
+</script>
+<script src="js/canvas-nest.min.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- simple slide -->
+<script type="text/javascript" src="js/simple.slide.min.js"></script>
+
+<script type="text/javascript">
+Date.prototype.toLocaleString = function() {
+    return this.getFullYear() + "-" + (this.getMonth() + 1) + "-" + this.getDate() + "" ;
+}
+$('.One').simpleSlide();
+    function showOne(time){
+    	/*var a = '';
+			a += '<a href="javascript:;" i="img/1.jpg" class="Slide One"><img src="img/1.jpg" alt=""></a>';
+			a += '<a href="javascript:;" i="img/2.jpg" class="Slide One"><img src="img/2.jpg" alt=""></a>';
+		$("#main1").html(a);
+		$('.One').simpleSlide();
+		$('.One:first').click();*/
+    	$.ajax({
+			type:"post",
+			url:"../../../../babytimeline/list/"+time + ' 00:00:00',
+			success: function(data){
+				var a = '';
+				$.each(data, function(index, value) {
+					a += '<a href="javascript:;" i="'+value.imageUrl+'" class="Slide One"><img src="'+value.imageUrl+'" alt=""></a>';
+				});
+				$("#main1").html(a);
+				
+				$('.One').simpleSlide();
+				$('.One:first').click();
+			}
+		});
+    }
+</script>
+<script type="text/javascript">
+$(function(){
+	query();
+	$('#next').click(function(){
+		query();
+	});
+});
+function query(){
+	var time = $('.line_events strong:last>input').val();
+	if( time != '' && time != undefined){
+		time += ' 00:00:00';
+	}
+	$.ajax({
+		type:"post",
+		url:"../../../../babytimeline/list",
+		data:{time:time},
+		async:true,
+		success: function(data){
+			var aa = '';
+			for(var i = 0; i < data.length; i++ ){
+				var arr = data[i].imageUrl.split(',');
+				var classstr = 'right_li';
+				if(i%2 != 0){
+					classstr = 'left_li';
+				}
+				var unixTimestamp = new Date(data[i].time) ;
+				aa += '<li class="'+classstr+'">'
+	              		+'<div class="line_events png line-time png" onclick="showOne(\''+unixTimestamp.toLocaleString()+'\')">'
+	              			+'<div class="txt_events">'
+				              	+'<strong>'+ unixTimestamp.toLocaleString().replace('-','年').replace('-','月')+'日'+'<input type="hidden" value="'+unixTimestamp.toLocaleString()+'"/></strong>'
+				              	+'<p>一周时候,一起去什么地方拍的照片.....</p>'
+				              	+'<div class="img_show">';
+		        var imagestr = '';
+		        for(var j = 0; j < arr.length; j ++){
+		        	imagestr += '<img src="'+arr[j]+'" />';
+		        }
+		              			
+		        aa +=imagestr + '</div>'
+		             + '</div>'
+	             + '</div>'
+	            + '</li>';
+			}
+			$('#items').append(aa);
+		}
+	});
+}
+</script>
+<script type="text/javascript">
+var myAuto = document.getElementById('audio');  
+var audioStatus = "paused";
+myAuto.addEventListener("playing", function(){
+    audioStatus = "playing";
+});
+myAuto.addEventListener("pause", function(){
+    audioStatus = "paused";
+});
+function play(){
+	if(audioStatus == 'playing'){
+		myAuto.pause();
+	}else{
+		myAuto.play();
+	}
+}
+$(function(){
+	myAuto.play();
+});
+
+</script>
+</body>
+</html>
