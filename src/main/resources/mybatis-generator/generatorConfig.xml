@@ -5,7 +5,7 @@
  
 <generatorConfiguration>
      <classPathEntry
-             location="D:/profereceTraining/maven/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar"/>
+             location="D:/appservers/maven/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar"/>
      <context id="my" targetRuntime="MyBatis3">
          <commentGenerator>
              <property name="suppressDate" value="false"/>
@@ -13,22 +13,22 @@
          </commentGenerator>
  
          <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                         connectionURL="jdbc:mysql://localhost:3306/lifeworld" userId="root"
-                         password="123456"/>
+                         connectionURL="jdbc:mysql://192.168.1.111:3306/lifeworld" userId="root"
+                         password="root123"/>
  
          <javaModelGenerator targetPackage="com.mnuocom.lifeworld.entity"
-                             targetProject="D:/profereceTraining/java/workspace/workspace-eclispe4/lifeworld/src/main/java">
+                             targetProject="D:/myworkspaces/lifeworld/src/main/java">
              <property name="enableSubPackages" value="true"/>
              <property name="trimStrings" value="true"/>
          </javaModelGenerator>
  
          <sqlMapGenerator targetPackage="com.mnuocom.lifeworld.mapping"
-                          targetProject="D:/profereceTraining/java/workspace/workspace-eclispe4/lifeworld/src/main/java">
+                          targetProject="D:/myworkspaces/lifeworld/src/main/java">
              <property name="enableSubPackages" value="true"/>
          </sqlMapGenerator>
  
          <javaClientGenerator targetPackage="com.mnuocom.lifeworld.dao"
-                              targetProject ="D:/profereceTraining/java/workspace/workspace-eclispe4/lifeworld/src/main/java" type="XMLMAPPER">
+                              targetProject ="D:/myworkspaces/lifeworld/src/main/java" type="XMLMAPPER">
              <property name="enableSubPackages" value="true"/>
          </javaClientGenerator>
  
@@ -37,7 +37,7 @@
                 enableDeleteByExample="false" enableSelectByExample="false"
                 selectByExampleQueryId="false"/>-->
  
-         <table tableName="lw_blog" domainObjectName="Blog"
+         <table tableName="lw_baby_images" domainObjectName="Blog"
                 enableCountByExample="false" enableUpdateByExample="false"
                 enableDeleteByExample="false" enableSelectByExample="false"
                 selectByExampleQueryId="false">
