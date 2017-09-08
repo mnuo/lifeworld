@@ -4,11 +4,24 @@
 package com.mnuocom.lifeworld;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.junit.Test;
+
+import com.mnuocom.lifeworld.common.utils.ImageHelper;
 
 /**
  * @author saxon
@@ -70,4 +83,100 @@ public class Testss {
 			}
 		}
 	}
+	@Test
+	public void genericPictureCompress(){
+		String sourceStr = "D:/data/resource/resource/image/";
+		File file = new File(sourceStr);
+		File[] files = file.listFiles();
+		for (File file2 : files) {
+			if(file2.isDirectory()){
+				String name = file2.getName();
+				File[] file3 = file2.listFiles();
+				for(File file4 : file3){
+					ImageHelper.scaleImage(sourceStr+"/"+name+"/" + file4.getName(), sourceStr+"/"+name+"/" + file4.getName()+"_", 0.1, "jpg");
+				}
+			}
+		}
+	}
+	@Test
+	public void genericPicture(){
+		String insertHader = " INSERT INTO `lw_baby_images` VALUES (";
+		File file = new File("D:/mnuo/hhy/aa");
+        File[] files = file.listFiles();
+        int i = 200;
+        for (File file2 : files) {
+             String fileName = file2.getName();
+             String time = "";
+             String diretime = "";
+             String[] times = fileName.split("_");
+             if(times.length > 2){
+            	 diretime = times[1];
+            	 time = formateDate1(times[1], "yyyyMMdd","yyyy-MM-dd");
+             }else{
+            	 String time1 = fileName.replaceAll("IMG", "").replaceAll(".jpg", "");
+            	 time = formateDate1(time1, "yyyyMMddHHmmss","yyyy-MM-dd");
+            	 diretime = formateDate1(time1, "yyyyMMddHHmmss","yyyyMMdd");
+             }
+//             copyFile("D:/data/resource/resource/image/" + diretime, fileName, "D:/mnuo/hhy/aa/" + fileName);
+             System.out.println(insertHader + (i++) + ", '" + time + "', '/resource/image/" + diretime+"/"+fileName + "', '', '2017-9-8 11:57:53');");
+         }
+	}
+	
+	public static void copyFile(String path, String fileName, String resource){
+		FileInputStream in = null;
+		FileOutputStream out = null;
+		try {
+			// 建立父目录
+			File dir = new File(path);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+			in = new FileInputStream(resource);
+			// 每次读的长度
+			int readLength = 1024;
+			int length = in.available();
+			int len = (length % readLength == 0) ? (length / readLength)
+					: (length / readLength + 1);
+			byte[] data = new byte[readLength];
+
+			// 建立文件并写文件
+			out = new FileOutputStream(path + "/" + fileName);
+			for (int i = 0; i < len; i++) {
+				if (in.read(data) != -1) {
+					out.write(data);
+				}
+			}
+			out.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (out != null) {
+				try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	public static String formateDate1(String str, String parse, String parse1) {
+		DateFormat format1 = new SimpleDateFormat(parse);         
+		DateFormat format2= new SimpleDateFormat(parse1);         
+		Date date = null;    
+		try {    
+	       date = format1.parse(str);   
+	       return format2.format(date); 
+		} catch (ParseException e) {    
+		   e.printStackTrace();    
+		}   
+		return null;
+	}
+	
 }

@@ -37,7 +37,7 @@ text-shadow: 0 0 10px #529DFF;
 	position: absolute;
 	top: -23px;
 	left: -2px;
-	box-shadow: 0 0 8px #1890ff;
+	/** box-shadow: 0 0 8px #1890ff;**/
 }
 .left_li .line-time{
 	border-right: 1px solid #dff;
@@ -55,7 +55,7 @@ text-shadow: 0 0 10px #529DFF;
 	position: absolute;
 	top: -23px;
 	right: -2px;
-	box-shadow: 0 0 8px #1890ff;
+	/**box-shadow: 0 0 8px #1890ff;**/
 }
 .img_show{
 	white-space: normal;
@@ -77,6 +77,9 @@ text-shadow: 0 0 10px #529DFF;
 	white-space: normal;
 	text-indent: 2em;
 }
+.events_list .ic_arr, .right_li, .left_li,.btn_sound{
+	cursor: pointer;
+}
 </style>
 
 </head>
@@ -90,8 +93,8 @@ text-shadow: 0 0 10px #529DFF;
           <div class="nav_box">
             <ul class="nav_list" id="nav_list">
 							 <li><a href="javascript:void(0);" onclick="play()" id="playbtn" class="btn_sound"></a></li>
-							 <li><a href="#">主页</a></li>
-							 <li><a href="">官网</a></li>
+							 <!-- <li><a href="#">主页</a></li>
+							 <li><a href="">官网</a></li> -->
             </ul>
             <span class="ic_line" id="h_line"></span>
           </div>
@@ -210,8 +213,12 @@ $(function(){
 });
 function query(){
 	var time = $('.line_events strong:last>input').val();
-	if( time != '' && time != undefined){
+	var aaa = true;
+	if(time == undefined || time == ''){
+		time = getNowFormatDate();
+	}else if( time != '' && time != undefined){
 		time += ' 00:00:00';
+		aaa = false;
 	}
 	$.ajax({
 		type:"post",
@@ -219,6 +226,9 @@ function query(){
 		data:{time:time},
 		async:true,
 		success: function(data){
+			if(aaa){
+				document.body.scrollTop = 0;
+			}
 			var aa = '';
 			for(var i = 0; i < data.length; i++ ){
 				var arr = data[i].imageUrl.split(',');
@@ -231,11 +241,11 @@ function query(){
 	              		+'<div class="line_events png line-time png" onclick="showOne(\''+unixTimestamp.toLocaleString()+'\')">'
 	              			+'<div class="txt_events">'
 				              	+'<strong>'+ unixTimestamp.toLocaleString().replace('-','年').replace('-','月')+'日'+'<input type="hidden" value="'+unixTimestamp.toLocaleString()+'"/></strong>'
-				              	+'<p>一周时候,一起去什么地方拍的照片.....</p>'
+				              	+'<p></p>'
 				              	+'<div class="img_show">';
 		        var imagestr = '';
 		        for(var j = 0; j < arr.length; j ++){
-		        	imagestr += '<img src="'+arr[j]+'" />';
+		        	imagestr += '<img src="'+arr[j]+'_" />';
 		        }
 		              			
 		        aa +=imagestr + '</div>'
@@ -244,6 +254,9 @@ function query(){
 	            + '</li>';
 			}
 			$('#items').append(aa);
+			if(data.length < 1){
+				$('.events_list .ic_arr').css({'display': 'none'});
+			}
 		}
 	});
 }
@@ -268,6 +281,23 @@ $(function(){
 	myAuto.play();
 });
 
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+    return currentdate;
+}
 </script>
 </body>
 </html>
