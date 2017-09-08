@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <script type="text/javascript">
+  //是否含有中文（也包含日文和韩文）
+var str = "gg中国aaaa";
+alert(str.indexOf('a'));
+alert(isChineseChar(str));
+
+function isChineseChar(str){   
+   var reg = /^[\u4E00-\u9FA5\uF900-\uFA2D]+/;
+   return reg.test(str);
+}
+<% 
+          Enumeration enu=request.getParameterNames(); 
+          while(enu.hasMoreElements()) 
+          { 
+              String name=(String)enu.nextElement(); 
+              if(name.startsWith("**")) 
+              { 
+              //如果是数组参数，则逐个打印 
+      %> 
+              <h1><%=name %>: 
+              <% 
+                  String canshu[]=request.getParameterValues(name); 
+                  int i; 
+                  for(i=0;i<canshu.length;i++) 
+                  { 
+              %> 
+                      <%=canshu[i] %> 
+              <% 
+                  } 
+              %> 
+              </h1> 
+      <% 
+              } 
+              else 
+              { 
+              //如果不是数组参数，直接打印 
+      %> 
+                  <h1><%=name %>:<%=request.getParameter(name) %></h1> 
+      <% 
+              } 
+          } 
+      %> 
+  </script>
+ </body>
+</html>
