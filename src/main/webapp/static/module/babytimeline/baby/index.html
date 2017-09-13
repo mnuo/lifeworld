@@ -5,6 +5,7 @@
 <title>BODY成长记</title>
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/totop.css">
 <!-- <link rel="stylesheet" type="text/css" href="css/demo.css"/> -->
 <link rel="stylesheet" href="css/animate.css"/>
 <link rel="stylesheet" href="css/simple.slide.css"/>
@@ -79,6 +80,9 @@ text-shadow: 0 0 10px #529DFF;
 }
 .events_list .ic_arr, .right_li, .left_li,.btn_sound{
 	cursor: pointer;
+}
+.header .btn_sound.pause{
+	background: url("images/pause.png") no-repeat 0;
 }
 </style>
 
@@ -158,6 +162,7 @@ text-shadow: 0 0 10px #529DFF;
   </div>
   <audio id="audio" src="let-it-go.mp3" style="opacity:0" preload="auto" controls loop hidden="true">  
   </audio>
+  <a id="rocket" href="#top" class=""></a>
   <div class="lk content" style="display: none;">
     <div id="main1" style="display: none;">
         <!--<a href="javascript:;" i="img/1.jpg" class="Slide One"><img src="img/1.jpg" alt=""></a>
@@ -175,6 +180,7 @@ text-shadow: 0 0 10px #529DFF;
 <script src="js/jquery-1.11.0.min.js"></script>
 <!-- simple slide -->
 <script type="text/javascript" src="js/simple.slide.min.js"></script>
+<script type="text/javascript" src="js/totop.js"></script>
 
 <script type="text/javascript">
 Date.prototype.toLocaleString = function() {
@@ -230,6 +236,7 @@ function query(){
 				document.body.scrollTop = 0;
 			}
 			var aa = '';
+			var liLength = $('#items li').length;
 			for(var i = 0; i < data.length; i++ ){
 				var arr = data[i].imageUrl.split(',');
 				var classstr = 'right_li';
@@ -237,7 +244,13 @@ function query(){
 					classstr = 'left_li';
 				}
 				var unixTimestamp = new Date(data[i].time) ;
-				aa += '<li class="'+classstr+'">'
+				var style = "";
+				if(liLength > 7){
+					style = "animation: enttxt_effect .8s "+(0.2+(i+1)*0.8)+"s linear both;"
+							+"-webkit-animation: enttxt_effect .8s "+(0.2+(i+1)*0.8)+"s linear both;";
+				}
+				
+				aa += '<li class="'+classstr+'" style="'+style+'">'
 	              		+'<div class="line_events png line-time png" onclick="showOne(\''+unixTimestamp.toLocaleString()+'\')">'
 	              			+'<div class="txt_events">'
 				              	+'<strong>'+ unixTimestamp.toLocaleString().replace('-','年').replace('-','月')+'日'+'<input type="hidden" value="'+unixTimestamp.toLocaleString()+'"/></strong>'
@@ -273,8 +286,10 @@ myAuto.addEventListener("pause", function(){
 function play(){
 	if(audioStatus == 'playing'){
 		myAuto.pause();
+		$('#playbtn').addClass('pause');
 	}else{
 		myAuto.play();
+		$('#playbtn').removeClass('pause');
 	}
 }
 $(function(){
@@ -297,6 +312,38 @@ function getNowFormatDate() {
             + " " + date.getHours() + seperator2 + date.getMinutes()
             + seperator2 + date.getSeconds();
     return currentdate;
+}
+window.onscroll = function() {
+	var $this =$(this),
+    viewH =$(this).height(),//可见高度
+    contentH =$('body').height(),//内容高度
+    scrollTop =$(this).scrollTop();//滚动高度
+    var param = 100;
+    if(!IsPC()){
+		param = 1000;
+    }
+    if(contentH - viewH - scrollTop <= param) { //到达底部100px时,加载新内容
+   //if(scrollTop/(contentH -viewH)>=0.95){ //到达底部100px时,加载新内容
+   // 这里加载数据..
+	    query();
+   }
+}
+
+</script>
+<script type="text/javascript">
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
 }
 </script>
 </body>

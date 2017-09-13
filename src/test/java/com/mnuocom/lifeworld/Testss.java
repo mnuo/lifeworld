@@ -84,12 +84,18 @@ public class Testss {
 		}
 	}
 	@Test
-	public void genericPictureCompress(){
+	public void genericPictureCompress() throws Exception{
 		String sourceStr = "D:/data/resource/resource/image/";
 		File file = new File(sourceStr);
 		File[] files = file.listFiles();
 		for (File file2 : files) {
 			if(file2.isDirectory()){
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				Date date = sdf.parse("2017-09-11");
+				long dateAssert = date.getTime();
+				long createTime = file2.lastModified();
+				if(dateAssert > createTime) continue;
+				
 				String name = file2.getName();
 				File[] file3 = file2.listFiles();
 				for(File file4 : file3){
@@ -101,9 +107,9 @@ public class Testss {
 	@Test
 	public void genericPicture(){
 		String insertHader = " INSERT INTO `lw_baby_images` VALUES (";
-		File file = new File("D:/mnuo/hhy/aa");
+		File file = new File("D:/mnuo/Camera/qq");
         File[] files = file.listFiles();
-        int i = 200;
+        int i = 380;
         for (File file2 : files) {
              String fileName = file2.getName();
              String time = "";
@@ -117,7 +123,7 @@ public class Testss {
             	 time = formateDate1(time1, "yyyyMMddHHmmss","yyyy-MM-dd");
             	 diretime = formateDate1(time1, "yyyyMMddHHmmss","yyyyMMdd");
              }
-//             copyFile("D:/data/resource/resource/image/" + diretime, fileName, "D:/mnuo/hhy/aa/" + fileName);
+//             copyFile("D:/data/resource/resource/image/" + diretime, fileName, "D:/mnuo/Camera/qq/" + fileName);
              System.out.println(insertHader + (i++) + ", '" + time + "', '/resource/image/" + diretime+"/"+fileName + "', '', '2017-9-8 11:57:53');");
          }
 	}
